@@ -9,5 +9,9 @@ pipeline {
         checkout scm
       }
     } 
+    stage('update java'){
+      steps {
+        
+      }
   }
 }
