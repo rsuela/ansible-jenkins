@@ -2,10 +2,10 @@
 - hosts: jenkins-windows-nodes
   tasks:
   
-    - name: Download "{{ jdk_installer }}"
+    - name: Download jdk-8u211-windows-x64.exe
       get_url:
-        url: 'http://13.238.201.132:8081/artifactory/installers/{{ jdk_installer }}'
-        dest: '{{ jdk_installer }}'
+        url: 'http://13.238.201.132:8081/artifactory/installers/jdk-8u211-windows-x64.exe'
+        dest: jdk-8u211-windows-x64.exe
   
     - name: Install oracle java
       win_package:
