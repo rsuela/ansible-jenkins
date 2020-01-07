@@ -14,7 +14,7 @@ pipeline {
         ansiColor('xterm') {
             ansiblePlaybook(
                 playbook: 'rolling_update.yml',
-                inventory: 'ir-nodes.yml',
+                inventory: 'ir-inventory.yml',
                 colorized: true)
         }
       }
