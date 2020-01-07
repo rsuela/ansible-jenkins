@@ -11,7 +11,12 @@ pipeline {
     } 
     stage('update java'){
       steps {
-        sh 'ls -ah'
+        ansiColor('xterm') {
+            ansiblePlaybook(
+                playbook: 'playbook.yml',
+                inventory: 'ir-nodes.yml',
+                colorized: true)
+        }
       }
     }
   }
