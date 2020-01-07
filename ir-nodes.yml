@@ -1,13 +1,9 @@
 [jenkins-windows-nodes]
 13.238.154.9
 
-[jenkins-linux-nodes]
-3.106.143.19
-
 [jenkins-windows-nodes:vars]
 ansible_user=ansible
 ansible_password=ansible
 ansible_connection=winrm
 ansible_port=5985
-ansible_winrm_transport: basic
 ansible_winrm_server_cert_validation=ignore
