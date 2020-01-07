@@ -1,6 +1,12 @@
 ---
 - hosts: jenkins-windows-nodes
   tasks:
+  
+    - name: Download "{{ jdk_installer }}"
+      get_url:
+        url: 'http://13.238.201.132:8081/artifactory/installers/{{ jdk_installer }}'
+        dest: {{ jdk_installer }}'
+  
     - name: Install oracle java
       win_package:
         product_id: '{64A3A4F4-B792-11D6-A78A-00B0D0180231}'
