@@ -2,7 +2,7 @@
 - name: Download "{{ jdk_installer }}"
   get_url:
     url: 'http://13.238.201.132:8081/artifactory/installers/{{ jdk_installer }}'
-    dest: {{ jdk_installer }}'
+    dest: "C:\Installers\{{ jdk_installer }}"
 
 - name: Install oracle java
   win_package:
