@@ -11,7 +11,7 @@ pipeline {
     } 
     stage('update java'){
       steps {
-        
+        sh 'ls -ah
       }
   }
 }
