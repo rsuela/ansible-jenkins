@@ -1,4 +1,4 @@
 ---
 jdk_installer: jdk-8u211-windows-x64.exe
-java_major_version: 1.8
+java_major_version: 8.0
 java_minor_version: 211
