@@ -1,0 +1,17 @@
+---
+- hosts: jenkins-windows-nodes
+  tasks:
+    - name: Install oracle java
+      win_package:
+        product_id: '{64A3A4F4-B792-11D6-A78A-00B0D0180231}'
+        arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
+        path: C:\Installers\jdk-8u231-windows-x64.exe
+        state: present
+
+    - name: Install chrome
+      win_package:
+        product_id: 'Google Chrome'
+        arguments: /silent /install
+        path: C:\Installers\ChromeStandaloneSetup64.exe
+        state: present
+
