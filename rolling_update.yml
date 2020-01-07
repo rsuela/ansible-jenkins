@@ -12,7 +12,7 @@
   - java
   
   post_tasks:
-  - name: stop jenkins service
+  - name: start jenkins service
     win_service: 
       name: jenkinsslave-C__temp
       state: started
