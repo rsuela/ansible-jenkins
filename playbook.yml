@@ -6,6 +6,8 @@
       win_get_url:
         url: 'http://13.238.201.132:8081/artifactory/installers/jdk-8u211-windows-x64.exe'
         dest: C:\Installers\jdk-8u211-windows-x64.exe
+        url_username: admin
+        url_password: password
   
     - name: Install oracle java
       win_package:
