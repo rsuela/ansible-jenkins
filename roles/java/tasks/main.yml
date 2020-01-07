@@ -2,7 +2,7 @@
 - name: Download "{{ jdk_installer }}"
   win_get_url:
     url: 'http://52.63.197.165:8081/artifactory/installers/{{ jdk_installer }}'
-    dest: C:\Installers"{{ jdk_installer }}"
+    dest: C:\Installers\{{ jdk_installer }}
     url_username: admin
     url_password: password
 
@@ -10,7 +10,7 @@
   win_package:
     product_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}'
     arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
-    path: C:\Installers\"{{ jdk_installer }}"
+    path: C:\Installers\{{ jdk_installer }}
     state: present
 
 - name: Set Java_home
