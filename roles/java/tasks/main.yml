@@ -8,7 +8,7 @@
 
 - name: Install oracle java
   win_package:
-    product_id: {{ uninstall_prod_id }}
+    product_id: '{{ uninstall_prod_id }}'
     arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
     path: C:\Installers\{{ jdk_installer }}
     state: present
