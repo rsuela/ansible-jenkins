@@ -9,7 +9,7 @@
       state: stopped
     
   roles:
-  - java
+  #- java
   - chrome
   
   post_tasks:
