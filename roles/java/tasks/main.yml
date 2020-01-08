@@ -1,7 +1,7 @@
 ---
 - name: Download "{{ jdk_installer }}"
   win_get_url:
-    url: 'http://52.63.197.165:8081/artifactory/installers/{{ jdk_installer }}'
+    url: 'http://52.63.197.165:8081/artifactory/installers/java/{{ jdk_installer }}'
     dest: C:\Installers\{{ jdk_installer }}
     url_username: admin
     url_password: password
