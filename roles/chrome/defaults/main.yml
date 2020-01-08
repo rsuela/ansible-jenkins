@@ -1,2 +1,2 @@
 ---
-# defaults file for chrome
+chrome_installer: ChromeStandaloneSetup64.exe

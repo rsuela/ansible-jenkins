@@ -13,7 +13,7 @@ pipeline {
       steps {
         ansiColor('xterm') {
             ansiblePlaybook(
-                playbook: 'install.yml',
+                playbook: 'rolling_update.yml',
                 inventory: 'ir-inventory.yml',
                 colorized: true)
         }

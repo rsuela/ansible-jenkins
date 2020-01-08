@@ -10,6 +10,7 @@
     
   roles:
   - java
+  - chrome
   
   post_tasks:
   - name: start jenkins service

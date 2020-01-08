@@ -1,2 +1,14 @@
 ---
-# tasks file for chrome
+- name: Download "{{ chrome_installer }}"
+  win_get_url:
+    url: 'http://52.63.197.165:8081/artifactory/installers/{{ chrome_installer }}'
+    dest: C:\Installers\{{ chrome_installer }}
+    url_username: admin
+    url_password: password
+    
+- name: Install chrome
+  win_package:
+    product_id: 'Google Chrome'
+    arguments: /silent /install
+    path: C:\Installers\ChromeStandaloneSetup64.exe
+    state: present
