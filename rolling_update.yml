@@ -2,6 +2,9 @@
 - hosts: jenkins-windows-nodes
   tasks: []
   
+- hosts: jenkins-windows-nodes
+  serial: 1
+  
   #pre_tasks:
   #- name: stop jenkins service
   #  win_service: 
