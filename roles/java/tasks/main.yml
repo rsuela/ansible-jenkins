@@ -1,10 +1,16 @@
 ---
+- name: check if installer exists
+  win_stat:
+    path: C:\Installers\{{ jdk_installer }}
+  register: result
+  
 - name: Download "{{ jdk_installer }}"
   win_get_url:
     url: '{{ artifactory }}/installers/java/{{ jdk_installer }}'
     dest: C:\Installers\{{ jdk_installer }}
     url_username: admin
     url_password: password
+    when: result is succeeded
 
 - name: Install oracle java
   win_package:
