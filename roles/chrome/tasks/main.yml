@@ -5,6 +5,7 @@
     dest: C:\Installers\{{ chrome_installer }}
     url_username: admin
     url_password: password
+    force: no
     
 - name: Install chrome
   win_package:
