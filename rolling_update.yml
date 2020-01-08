@@ -2,19 +2,19 @@
 - hosts: jenkins-windows-nodes
   tasks: []
   
-  pre_tasks:
-  - name: stop jenkins service
-    win_service: 
-      name: jenkinsslave-C__temp
-      state: stopped
+  #pre_tasks:
+  #- name: stop jenkins service
+  #  win_service: 
+  #    name: jenkinsslave-C__temp
+  #    state: stopped
     
   roles:
-  #- java
+  - java
   - chrome
   
-  post_tasks:
-  - name: start jenkins service
-    win_service: 
-      name: jenkinsslave-C__temp
-      state: started
+  #post_tasks:
+  #- name: start jenkins service
+  #  win_service: 
+  #    name: jenkinsslave-C__temp
+  #    state: started
 
