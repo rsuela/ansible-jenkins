@@ -2,3 +2,4 @@
 jdk_installer: jdk-8u211-windows-x64.exe
 java_major_version: 8.0
 java_minor_version: 211
+uninstall_prod_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}'
