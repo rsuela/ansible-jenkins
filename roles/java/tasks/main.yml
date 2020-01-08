@@ -10,7 +10,7 @@
     dest: C:\Installers\{{ jdk_installer }}
     url_username: admin
     url_password: password
-    when: result != success
+    when: result != succeeded
 
 - name: Install oracle java
   win_package:
