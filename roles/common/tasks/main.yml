@@ -1,2 +1,5 @@
 ---
-# tasks file for common
+- name: Create Installers directory
+  win_file:
+    path: C:\Installers
+    state: directory

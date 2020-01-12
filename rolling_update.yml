@@ -12,6 +12,7 @@
       state: stopped
     
   roles:
+  - common
   - java
   - chrome
   
