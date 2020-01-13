@@ -1,7 +1,10 @@
 ---
 jdk_installer: jdk-8u231-windows-x64.exe
+
 java_major_version: 8.0
 java_minor_version: 231
-# uninstall_prod_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}'
-# v231
+
+# uninstall_prod_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}' # v231
 uninstall_prod_id: '{64A3A4F4-B792-11D6-A78A-00B0D0180231}' 
+
+clean_install: true # On upgrade remove previous installation
