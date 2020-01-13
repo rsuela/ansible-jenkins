@@ -7,6 +7,14 @@
     url_password: password
     force: no
 
+- name: Create a file from a Jinja2 template
+  win_template:
+    src: uninstall_existing_java.bat.j2
+    dest: C:\Installers\uninstall_existing_java.bat
+    
+- name uninstall existing Oracle java
+  win_command: C:\Installers\uninstall_existing_java.bat
+  
 - name: Install oracle java
   win_package:
     product_id: '{{ uninstall_prod_id }}'
