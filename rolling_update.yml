@@ -10,6 +10,7 @@
     win_service: 
       name: jenkinsslave-C__temp
       state: stopped
+    ignore_errors: yes
     
   roles:
   - common
@@ -21,4 +22,5 @@
     win_service: 
       name: jenkinsslave-C__temp
       state: started
+    ignore_errors: yes
 
