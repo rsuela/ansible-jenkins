@@ -14,6 +14,7 @@
     
 - name: uninstall existing Oracle java
   win_command: C:\Installers\uninstall_existing_java.bat
+  ignore_errors: yes
   
 - name: Install oracle java
   win_package:
