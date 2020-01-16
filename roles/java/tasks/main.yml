@@ -1,5 +1,5 @@
 ---  
-- name: Download "{{ jdk_installer }}"
+- name: Download "jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe"
   win_get_url:
     url: '{{ artifactory }}/installers/java/jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe'
     dest: '{{ installer_dir }}\{{ jdk_installer }}'
