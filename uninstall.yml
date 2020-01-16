@@ -1,0 +1,31 @@
+---
+- hosts: jenkins-windows-nodes
+  tasks: []
+  
+- hosts: jenkins-windows-nodes
+  serial: 1
+  
+  pre_tasks:
+  - name: stop jenkins service
+    win_service: 
+      name: jenkinsslave-C__temp
+      state: stopped
+    ignore_errors: yes
+    
+  tasks:
+    - name: uninstall oracle java
+      win_package:
+        product_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}'
+        arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
+        path: C:\Installers\jdk-8u211-windows-x64.exe
+        state: absent
+      ignore_errors: yes
+        
+    - name: uninstall oracle java
+      win_package:
+        product_id: '{64A3A4F4-B792-11D6-A78A-00B0D01802312F64180211F0}'
+        arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
+        path: C:\Installers\jdk-8u231-windows-x64.exe
+        state: absent
+      ignore_errors: yes
+
