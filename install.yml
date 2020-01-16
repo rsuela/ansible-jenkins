@@ -18,6 +18,13 @@
         product_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}'
         arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
         path: C:\Installers\jdk-8u211-windows-x64.exe
-        state: absent
+        state: present
       ignore_errors: yes
+      
+  post_tasks:
+  - name: start jenkins service
+    win_service: 
+      name: jenkinsslave-C__temp
+      state: started
+    ignore_errors: yes
 
