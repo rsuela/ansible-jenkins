@@ -1,27 +1,23 @@
----  
-- name: Download "{{ jdk_installer }}"
-  win_get_url:
-    url: '{{ artifactory }}/installers/java/jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe'
-    dest: '{{ installer_dir }}\{{ jdk_installer }}'
-    url_username: admin # temp for now will use vault.
-    url_password: password
-    force: no
+---
+- hosts: jenkins-windows-nodes
+  tasks: []
+  
+- hosts: jenkins-windows-nodes
+  serial: 1
+  
+  pre_tasks:
+  - name: stop jenkins service
+    win_service: 
+      name: jenkinsslave-C__temp
+      state: stopped
+    ignore_errors: yes
+    
+  tasks:
+    - name: install oracle java
+      win_package:
+        product_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}'
+        arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
+        path: C:\Installers\jdk-8u211-windows-x64.exe
+        state: absent
+      ignore_errors: yes
 
-- name: Install oracle java
-  win_package:
-    product_id: '{{ uninstall_prod_id }}'
-    arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
-    path: '{{ installer_dir }}\jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe'
-    state: present
-
-- name: Set Java_home
-  win_environment:
-    state: present
-    name: JAVA_HOME
-    value: 'C:\program files\java\jdk1.{{ java_major_version }}.0_{{ java_minor_version }}'
-    level: machine
-
-- name: Add Java to path
-  win_path:
-    elements:
-      - 'c:\program files\java\jdk{{ java_major_version }}_{{ java_minor_version }}\bin'
