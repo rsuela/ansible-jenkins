@@ -24,7 +24,7 @@
   win_package:
     product_id: '{{ uninstall_prod_id }}'
     arguments: /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature"
-    path: '{{ installer_dir }}\{{ jdk_installer }}'
+    path: '{{ installer_dir }}\jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe'
     state: present
 
 - name: Set Java_home
