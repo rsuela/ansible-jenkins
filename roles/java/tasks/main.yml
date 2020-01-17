@@ -2,7 +2,7 @@
 - name: Download "jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe"
   win_get_url:
     url: '{{ artifactory }}/installers/java/jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe'
-    dest: '{{ installer_dir }}\{{ jdk_installer }}'
+    dest: '{{ installer_dir }}\jdk-{{ java_major_version }}u{{ java_minor_version }}-windows-x64.exe'
     url_username: admin # temp for now will use vault.
     url_password: password
     force: no
