@@ -1,7 +1,5 @@
 [jenkins-windows-nodes]
-13.55.64.6
-13.211.78.105
-54.252.131.38
+3.24.240.234
 
 [jenkins-windows-nodes:vars]
 ansible_user=ansible
