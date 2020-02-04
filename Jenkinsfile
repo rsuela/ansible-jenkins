@@ -2,6 +2,10 @@ pipeline {
   agent {
     label 'control'
   }
+  
+  environment {  
+      ANSIBLE_CREDS = credentials('ansible-deployment-pwd-id')
+  }
 
   stages {
     stage('checkout') {
