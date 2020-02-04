@@ -1,10 +1,10 @@
 ---
 java_major_version: 8
-java_minor_version: 231
+java_minor_version: 211
 
-#uninstall_prod_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}' # v211
+uninstall_prod_id: '{26A24AE4-039D-4CA4-87B4-2F64180211F0}' # v211
 # v231
-uninstall_prod_id: '{64A3A4F4-B792-11D6-A78A-00B0D0180231}'
+#uninstall_prod_id: '{64A3A4F4-B792-11D6-A78A-00B0D0180231}'
 
 # On upgrade remove previous installation
 clean_install: true
