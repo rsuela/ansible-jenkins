@@ -32,12 +32,14 @@ pipeline {
                 !skipRemainingStages
             }
         }
-        ansiColor('xterm') {
+      steps{
+          ansiColor('xterm') {
             ansiblePlaybook(
                 playbook: 'rolling_update.yml',
                 inventory: 'ir-inventory.yml',
                 colorized: true)
         } 
+      }
     }
   }
 }
