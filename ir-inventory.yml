@@ -1,4 +1,5 @@
 [jenkins-windows-nodes]
+52.63.187.45
 13.55.45.115
 
 [jenkins-windows-nodes:vars]
