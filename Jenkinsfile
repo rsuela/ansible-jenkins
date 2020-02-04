@@ -13,7 +13,7 @@ pipeline {
         checkout scm
       }
     } 
-    stage('update java'){
+    stage('Security check'){
       steps {
         script {
           def userInput = input(id: 'userInput', message: 'Password for deployment?', parameters: [password(defaultValue: '', description: '', name: '')])
@@ -30,7 +30,7 @@ pipeline {
       }
     }
     
-    stage('run ansible'){
+    stage('Run ansible'){
         when {
             expression {
                 !skipRemainingStages
